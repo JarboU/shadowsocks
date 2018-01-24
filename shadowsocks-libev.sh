@@ -120,13 +120,14 @@ check_version(){
 
 print_info(){
     clear
-    echo "#############################################################"
-    echo "# Install Shadowsocks-libev server for CentOS 6 or 7        #"
-    echo "# Intro:  https://teddysun.com/357.html                     #"
-    echo "# Author: Teddysun <i@teddysun.com>                         #"
-    echo "# Github: https://github.com/shadowsocks/shadowsocks-libev  #"
-    echo "#############################################################"
     echo
+	echo "#############################################################"
+	echo "# One click Install Shadowsocks-go server                   #"
+	echo "# Intro: https://www.kjarbo.com/archives/148                #"
+	echo "# Author: JarboU <mylinux@kjarbo.com>                       #"
+	echo "# Github: https://github.com/JarboU/shadowsocks             #"
+	echo "#############################################################"
+	echo
 }
 
 # Check system
@@ -255,8 +256,8 @@ pre_install(){
 
     # Set shadowsocks-libev config password
     echo "Please enter password for shadowsocks-libev:"
-    read -p "(Default password: teddysun.com):" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
+    read -p "(Default password: redhat):" shadowsockspwd
+    [ -z "${shadowsockspwd}" ] && shadowsockspwd="redhat"
     echo
     echo "---------------------------"
     echo "password = ${shadowsockspwd}"
@@ -464,7 +465,7 @@ install_shadowsocks(){
         fi
     else
         echo
-        echo -e "[${red}Error${plain}] Shadowsocks-libev install failed. please visit https://teddysun.com/357.html and contact."
+        echo -e "[${red}Error${plain}] Shadowsocks-libev install failed. please visit https://www.kjarbo.com/archives/148 and contact."
         exit 1
     fi
 
@@ -481,7 +482,7 @@ install_shadowsocks(){
     echo -e "Your Password         : \033[41;37m ${shadowsockspwd} \033[0m"
     echo -e "Your Encryption Method: \033[41;37m ${shadowsockscipher} \033[0m"
     echo
-    echo "Welcome to visit:https://teddysun.com/357.html"
+    echo "Welcome to visit:https://www.kjarbo.com/archives/148"
     echo "Enjoy it!"
     echo
 }

@@ -2,7 +2,6 @@
 #
 # Auto install Shadowsocks Server (all version)
 #
-# Copyright (C) 2016-2017 Teddysun <i@teddysun.com>
 #
 # System Required:  CentOS 6+, Debian7+, Ubuntu12+
 #
@@ -13,13 +12,7 @@
 # https://github.com/shadowsocks/shadowsocks-windows
 # https://github.com/shadowsocksr/shadowsocksr
 #
-# Thanks:
-# @clowwindy  <https://twitter.com/clowwindy>
-# @breakwa11  <https://twitter.com/breakwa11>
-# @cyfdecyf   <https://twitter.com/cyfdecyf>
-# @madeye     <https://github.com/madeye>
-# 
-# Intro:  https://teddysun.com/486.html
+
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
@@ -378,7 +371,7 @@ error_detect_depends(){
     ${command}
     if [ $? != 0 ]; then
         echo -e "[${red}Error${plain}] Failed to install ${red}${depend}${plain}"
-        echo "Please visit: https://teddysun.com/486.html and contact."
+        echo "Please visit: https://www.kjarbo.com/archives/148 and contact."
         exit 1
     fi
 }
@@ -593,8 +586,8 @@ install_select() {
 
 install_prepare_password() {
     echo "Please enter password for ${software[${selected}-1]}"
-    read -p "(Default password: teddysun.com):" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
+    read -p "(Default password: redhat):" shadowsockspwd
+    [ -z "${shadowsockspwd}" ] && shadowsockspwd="redhat"
     echo
     echo "password = ${shadowsockspwd}"
     echo
@@ -871,7 +864,7 @@ install_shadowsocks_python() {
     else
         echo
         echo -e "[${red}Error${plain}] ${software[0]} install failed."
-        echo "Please visit: https://teddysun.com/486.html and contact."
+        echo "Please visit: https://www.kjarbo.com/archives/148 and contact."
         install_cleanup
         exit 1
     fi
@@ -898,7 +891,7 @@ install_shadowsocks_r() {
     else
         echo
         echo -e "[${red}Error${plain}] ${software[1]} install failed."
-        echo "Please visit; https://teddysun.com/486.html and contact."
+        echo "Please visit; https://www.kjarbo.com/archives/148 and contact."
         install_cleanup
         exit 1
     fi
@@ -938,7 +931,7 @@ install_shadowsocks_go() {
     else
         echo
         echo -e "[${red}Error${plain}] ${software[2]} install failed."
-        echo "Please visit: https://teddysun.com/486.html and contact."
+        echo "Please visit: https://www.kjarbo.com/archives/148 and contact."
         install_cleanup
         exit 1
     fi
@@ -961,7 +954,7 @@ install_shadowsocks_libev() {
     else
         echo
         echo -e "[${red}Error${plain}] ${software[3]} install failed."
-        echo "Please visit: https://teddysun.com/486.html and contact."
+        echo "Please visit: https://www.kjarbo.com/archives/148 and contact."
         install_cleanup
         exit 1
     fi
@@ -979,7 +972,7 @@ install_shadowsocks_libev_obfs() {
         make install
         if [ ! "$(command -v obfs-server)" ]; then
             echo -e "[${red}Error${plain}] simple-obfs for ${software[${selected}-1]} install failed."
-            echo "Please visit: https://teddysun.com/486.html and contact."
+            echo "Please visit: https://www.kjarbo.com/archives/148 and contact."
             install_cleanup
             exit 1
         fi
@@ -1118,7 +1111,7 @@ install_main(){
     fi
 
     echo
-    echo "Welcome to visit: https://teddysun.com/486.html"
+    echo "Welcome to visit: https://www.kjarbo.com/archives/148"
     echo "Enjoy it!"
     echo
 }

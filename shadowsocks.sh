@@ -157,8 +157,8 @@ pre_install(){
     fi
     # Set shadowsocks config password
     echo "Please enter password for shadowsocks-python"
-    read -p "(Default password: teddysun.com):" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
+    read -p "(Default password: redhat):" shadowsockspwd
+    [ -z "${shadowsockspwd}" ] && shadowsockspwd="redhat"
     echo
     echo "---------------------------"
     echo "password = ${shadowsockspwd}"
@@ -337,7 +337,7 @@ install(){
         /etc/init.d/shadowsocks start
     else
         echo
-        echo -e "[${red}Error${plain}] Shadowsocks install failed! please visit https://teddysun.com/342.html and contact."
+        echo -e "[${red}Error${plain}] Shadowsocks install failed! please visit https://www.kjarbo.com/archives/148 and contact."
         install_cleanup
         exit 1
     fi
@@ -350,7 +350,7 @@ install(){
     echo -e "Your Password         : \033[41;37m ${shadowsockspwd} \033[0m"
     echo -e "Your Encryption Method: \033[41;37m ${shadowsockscipher} \033[0m"
     echo
-    echo "Welcome to visit:https://teddysun.com/342.html"
+    echo "Welcome to visit:https://www.kjarbo.com/archives/148"
     echo "Enjoy it!"
     echo
 }
